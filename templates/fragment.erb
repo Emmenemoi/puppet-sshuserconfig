@@ -4,6 +4,9 @@ Host <%= @title %>
   User <%= @remote_username %>
   IdentityFile <%= @synthesized_privkey_path %>
   IdentitiesOnly yes
+<% if @no_host_check -%>
+  StrictHostKeyChecking no
+<% end %>
 <% if @connect_timeout -%>
   ConnectTimeout <%=  @connect_timeout %>
 <% end %>
